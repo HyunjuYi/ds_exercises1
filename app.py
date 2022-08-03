@@ -87,6 +87,9 @@ with st.container():
     with col2:
         s_btn = st.button('검색')
         d_btn = st.button('삭제')
+    # 이벤트(버튼 클릭)안에 또 이벤트(버튼 클릭)을 네스트 하고 있으면 앞/뒤 이벤트가 동시에 일어나야 if 안의 코드가 실행된다.
+    # 그래서 한 이벤트가 일어나면 그 이벤트가 일어났다는 정보를 session state에 저장해 두고 그 이벤트에 대한 일은 종료한다.
+    # 코드 수정 필요!!!
     if s_btn:
         if check_uid(s_uid) == 0:
             st.warning('해당 아이디는 존재하지 않습니다.')
